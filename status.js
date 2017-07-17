@@ -9,7 +9,6 @@ var weiboData = JSON.parse(fs.readFileSync('./public/weibo.json', 'utf8'));;
 var comments = JSON.parse(fs.readFileSync('./public/comments.json', 'utf8'));
 var consoleData = JSON.parse(fs.readFileSync('./public/record.json', 'utf8'));
 var weiboAPI = "https://api.weibo.com/2/statuses/public_timeline.json?access_token=2.00eSb_UD2DU1eDf3a9e590d50d5pCZ"
-
 var timer = 60 * 60 * 1000;
 setInterval(function() {
     request(weiboAPI, function(error, response, body) {
@@ -22,7 +21,6 @@ setInterval(function() {
         }
     })
 }, timer);
-
 consoleData.show = false;
 consoleData.onlineUser = 0;
 consoleData.onlineProjector = 0;
